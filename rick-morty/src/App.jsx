@@ -1,11 +1,25 @@
-import { useState } from 'react'
+import React from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import Characters from './pages/Characters';
+import CharacterDetails from './pages/CharacterDetails';
 import './App.css'
 
 function App() {
   
 
   return (
-   <h1></h1>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Characters />}></Route>
+          <Route path='character/:id' element={<CharacterDetails />}></Route>
+        </Routes>
+      </BrowserRouter>
+   </div>
   )
 }
 
