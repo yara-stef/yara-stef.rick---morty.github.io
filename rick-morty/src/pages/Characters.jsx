@@ -1,4 +1,6 @@
 import { useCharacters } from "../hooks/useCharacters";
+import FilterByName from "../features/FilterByName";
+import CharacterList from "../features/CharacterList";
 import logo from '../rick-morty.png';
 
 export default function Characters() {
@@ -13,6 +15,11 @@ export default function Characters() {
     }
     
     return (
-        <img src={logo}></img>
+        <div>
+            <img src={logo}></img>
+            <FilterByName />
+            <CharacterList />
+        </div>
+        
     )
 }
