@@ -3,13 +3,18 @@ import CharacterCard from "../components/CharacterCard";
 
 const CharacterList = () => {
     const { characters } = useCharacters();
-    console.log(characters);
+    const guys = characters.results;
+    console.log(guys);
     return (
         <div>
-            <CharacterCard character={characters} />
+            {
+                guys.map((guy) => {
+                    return <CharacterCard data={guy} />
+                })
+           }
             {/* {
-                characters.map((character, key) => {
-                    return <CharacterCard character={character} key={character.id} />
+                charactersArr.map((character, key) => {
+                    return <CharacterCard data={character} key={character.id} />
                 })
             } */}
         </div>

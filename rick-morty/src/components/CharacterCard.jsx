@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ data }) => {
     
-    const navigate = useNavigate();
 
     return (
-        <div className='grid-card' key={character.id}>
+        <div className='grid-card' key={data.id}>
             <div>
-                <img src={character.image}></img>
-                <p>{character.name}</p>
-                <p>{character.species }</p>
+                <img src={data.image}></img>
+                
+                    <Link to={`/character/${data.id}`}>
+                        <p>{data.name}</p>
+                    </Link>
+                <p>{data.species }</p>
             </div>
            
         </div>

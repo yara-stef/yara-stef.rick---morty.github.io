@@ -4,6 +4,8 @@ import CharacterList from "../features/CharacterList";
 import logo from '../rick-morty.png';
 
 export default function Characters() {
+    // const { characters, loading, error } = useCharacters();
+    // console.log(characters);
     const { characters, loading, error } = useCharacters();
     console.log(characters);
 
