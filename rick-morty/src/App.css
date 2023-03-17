@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -81,4 +81,82 @@
   color: rgba(0, 0, 0, 0.6);
   margin: 0;
   padding-left: 16px;
+}
+
+/* character info styles */
+.character-info {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 142px;
+}
+
+.back {
+  margin-left: 50px;
+  margin-top: 21px;
+  display: flex;
+  background-color: white;
+  border: 0;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.back:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  padding-right: 7px;
+}
+
+.character-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 76px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 20px;
+  color:  #8E8E93;
+  margin-bottom: 48px;
+}
+
+.information {
+  width: 413px;
+  height: 320px;
+  margin-left: 520px;
+  margin-right: 502px;
+  text-align: left;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 9px;
+}
+
+.information p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6E798C;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+hr {
+  border-top: 1px solid #E5E5E5;
+  width: 350px;
+  margin: 0;
+  
+  
 }

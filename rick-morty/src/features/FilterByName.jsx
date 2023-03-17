@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState } from 'react';
-import icon from '../search-icon.png';
 
 function FilterByName() {
     
@@ -11,8 +10,6 @@ function FilterByName() {
                 placeholder='Filter by name...'
             >                
             </input>
-            <button type='submit'></button>
-            {/* <img src={icon}></img> */}
         </form>
     )
 };
