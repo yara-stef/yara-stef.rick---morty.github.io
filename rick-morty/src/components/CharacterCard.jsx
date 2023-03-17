@@ -6,16 +6,13 @@ const CharacterCard = ({ character }) => {
     console.log(character);
 
     return (
-        <div className='grid-card' key={character.id}>
-            <div>
-                <img src={character.image}></img>
+        <div className='grid-card' key={character.id}>           
+                <img className='card-image' src={character.image}></img>
                 
                     <Link to={`/character/${character.id}`}>
-                        <p>{character.name}</p>
+                        <p className='name'>{character.name}</p>
                     </Link>
-                <p>{character.species }</p>
-            </div>
-           
+                <p className='species'>{character.species }</p>   
         </div>
     );
 };

@@ -7,7 +7,7 @@ const CharacterList = ({data}) => {
     // console.log(characters.results);
     console.log(data.results)
     return (   
-        <div>
+        <div className="grid-container">
             
             {
                 data.results && data.results.map((character) => {

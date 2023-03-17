@@ -17,7 +17,7 @@ export default function Characters() {
     
     return (
         <div>
-            <img src={logo}></img>
+            <img className="logo" src={logo}></img>
             <FilterByName />
             <CharacterList data={characters} />
         </div>

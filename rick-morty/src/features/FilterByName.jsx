@@ -5,14 +5,15 @@ import icon from '../search-icon.png';
 function FilterByName() {
     
     return (
-        <div>
-             <input
-                type='text'
-                placeholder='Filter By Name'
-            >
-                
-            </input><img src={ icon }></img>
-        </div>
+        <form className='search'>
+             <input className='filter'
+                type='search'
+                placeholder='Filter by name...'
+            >                
+            </input>
+            <button type='submit'></button>
+            {/* <img src={icon}></img> */}
+        </form>
     )
 };
 
