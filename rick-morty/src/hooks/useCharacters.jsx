@@ -5,7 +5,7 @@ export const useCharacters = () => {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-
+    
     useEffect(() => {
         const loadData = async () => {
             setLoading(true);
@@ -21,7 +21,6 @@ export const useCharacters = () => {
         }
         loadData();
     }, []);
-    console.log(characters);
 
     return {
         characters,

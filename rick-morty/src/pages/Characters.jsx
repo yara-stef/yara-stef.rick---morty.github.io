@@ -4,10 +4,9 @@ import CharacterList from "../features/CharacterList";
 import logo from '../rick-morty.png';
 
 export default function Characters() {
-    // const { characters, loading, error } = useCharacters();
-    // console.log(characters);
+    
     const { characters, loading, error } = useCharacters();
-    console.log(characters);
+   console.log(characters)
 
     if (loading) {
         return <p>data is loading</p>
@@ -20,7 +19,7 @@ export default function Characters() {
         <div>
             <img src={logo}></img>
             <FilterByName />
-            <CharacterList />
+            <CharacterList data={characters} />
         </div>
         
     )

@@ -1,22 +1,23 @@
 import { useCharacters } from "../hooks/useCharacters";
 import CharacterCard from "../components/CharacterCard";
 
-const CharacterList = () => {
-    const { characters } = useCharacters();
-    const guys = characters.results;
-    console.log(guys);
-    return (
+const CharacterList = ({data}) => {
+    // const { characters } = useCharacters();
+    // console.log(characters);
+    // console.log(characters.results);
+    console.log(data.results)
+    return (   
         <div>
+            
             {
-                guys.map((guy) => {
-                    return <CharacterCard data={guy} />
+                data.results && data.results.map((character) => {
+                    return (
+                        <CharacterCard character={character} key={character.id} />
+                    )
                 })
+               
            }
-            {/* {
-                charactersArr.map((character, key) => {
-                    return <CharacterCard data={character} key={character.id} />
-                })
-            } */}
+            
         </div>
     );
 };
