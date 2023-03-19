@@ -10,7 +10,15 @@ const CharacterList = ({data}) => {
         <div className="grid-container">
             
             {
-                data.results && data.results.map((character) => {
+                data.results && data.results.sort(function (a, b) {
+                    if (a.name < b.name) {
+                        return -1;
+                    }
+                    if (a.name > b.name) {
+                        return 1;
+                    }
+                    return 0;
+                }).map((character) => {
                     return (
                         <CharacterCard character={character} key={character.id} />
                     )
