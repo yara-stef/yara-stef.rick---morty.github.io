@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://yara-stef.github.io/rick-morty/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d dist",
     "preview": "vite preview --port 8080"
   },
   "dependencies": {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const CharacterCard = ({ character }) => {
-    console.log(character);
+    // console.log(character);
 
     return (
         <div className='grid-card' key={character.id}>   

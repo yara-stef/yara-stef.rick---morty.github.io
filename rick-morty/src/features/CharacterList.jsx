@@ -5,7 +5,7 @@ const CharacterList = ({data}) => {
     // const { characters } = useCharacters();
     // console.log(characters);
     // console.log(characters.results);
-    console.log(data.results)
+    // console.log(data.results)
     return (   
         <div className="grid-container">
             
