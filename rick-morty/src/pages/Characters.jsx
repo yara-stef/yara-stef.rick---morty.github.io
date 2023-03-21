@@ -9,17 +9,21 @@ export default function Characters() {
     const [query, setQuery] = useState('');
     const { characters, loading, error } = useCharacters(query);
     console.log(characters);
-    const [filter, setFilter] = useState([]);
+    const [savedCharacters, setSavedCharacters] = useState(characters);
+
     
 
-    // useEffect(() => {
-    //     const fetchCharacters = async () => {
-    //         const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${query}`);
-    //         setFilter(response.data);
-    //     };
-        
-    //     fetchCharacters();
-    // }, [query]);
+    useEffect(() => {
+        localStorage.setItem('savedCharacters', JSON.stringify(savedCharacters));
+    }, [savedCharacters]);
+    
+useEffect(() => {
+        const characters = JSON.parse(localStorage.getItem('savedCharacters'));
+        if (characters) {
+            setSavedCharacters(savedCharacters);
+        }
+    }, []);
+   
     
     if (loading) {
         // return <p>data is loading</p>

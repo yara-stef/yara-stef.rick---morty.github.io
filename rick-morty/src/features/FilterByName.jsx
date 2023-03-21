@@ -1,30 +1,18 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { useCharacters } from "../hooks/useCharacters";
 
 function FilterByName({ setQuery }) {
 
     const handleChange = (e) => {
         e.preventDefault();
         const queryCharacter = e.target.value.toLowerCase();
-        if (queryCharacter.length > 3) {
+        if (queryCharacter.length > 1) {
             setQuery(queryCharacter);
         }
         if (!queryCharacter.length) {
             setQuery('');
         }
     }
-    // const { characters } = useCharacters();
-    // console.log(characters.results)
-    // const [query, setQuery] = useState('');
-    // const [filter, setFilter] = useState([]);
-    // console.log(query);
-
-    // useEffect(() => {
-    //     fetch(`https://rickandmortyapi.com/api/character/?name=${query}`)
-    //         .then(response => response.json())
-    //         .then(characters => setFilter(characters.results.name));
-    // }, [query]);
+    
     return (
         <div>
             <form className='search'>
