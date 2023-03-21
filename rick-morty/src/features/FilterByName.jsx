@@ -2,7 +2,18 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useCharacters } from "../hooks/useCharacters";
 
-function FilterByName({filter, setQuery}) {
+function FilterByName({ setQuery }) {
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        const queryCharacter = e.target.value.toLowerCase();
+        if (queryCharacter.length > 3) {
+            setQuery(queryCharacter);
+        }
+        if (!queryCharacter.length) {
+            setQuery('');
+        }
+    }
     // const { characters } = useCharacters();
     // console.log(characters.results)
     // const [query, setQuery] = useState('');
@@ -20,11 +31,10 @@ function FilterByName({filter, setQuery}) {
              <input className='filter'
                 type='search'
                 placeholder='Filter by name...' 
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={handleChange}
             >                
             </input>
             </form>
-            <div>{ filter }</div>
         </div>
         
     )

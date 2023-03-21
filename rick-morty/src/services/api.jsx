@@ -9,6 +9,16 @@ const getCharacters = async () => {
     }
 };
 
+const getCharactersByKeys = async (query) => {
+    try {
+        const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${query}`);
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return error;
+    }
+}
+
 const getCharactersById = async (id) => {
     try {
         const response = await fetch(`${API_URL}/character/${id}`);
@@ -22,4 +32,5 @@ const getCharactersById = async (id) => {
 export {
     getCharacters,
     getCharactersById,
+    getCharactersByKeys,
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getCharacters } from "../services/api";
+import { getCharacters, getCharactersByKeys } from "../services/api";
 
-export const useCharacters = () => {
+export const useCharacters = (query) => {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -10,7 +10,7 @@ export const useCharacters = () => {
         const loadData = async () => {
             setLoading(true);
             try {
-                const data = await getCharacters();
+                const data = query.length ? await getCharactersByKeys(query) : await getCharacters();
                 setLoading(false);
                 setCharacters(data);
             } catch (error) {
@@ -20,7 +20,7 @@ export const useCharacters = () => {
             }
         }
         loadData();
-    }, []);
+    }, [query.length]);
 
     return {
         characters,

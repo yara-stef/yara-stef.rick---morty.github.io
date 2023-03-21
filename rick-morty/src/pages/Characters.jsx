@@ -6,23 +6,23 @@ import logo from '../rick-morty.png';
 
 export default function Characters() {
     
-    const { characters, loading, error } = useCharacters();
-    console.log(characters);
     const [query, setQuery] = useState('');
+    const { characters, loading, error } = useCharacters(query);
+    console.log(characters);
     const [filter, setFilter] = useState([]);
     
 
-    useEffect(() => {
-        const fetchCharacters = async () => {
-            const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${query}`);
-            setFilter(response.data);
-        };
+    // useEffect(() => {
+    //     const fetchCharacters = async () => {
+    //         const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${query}`);
+    //         setFilter(response.data);
+    //     };
         
-        fetchCharacters();
-    }, [query]);
+    //     fetchCharacters();
+    // }, [query]);
     
     if (loading) {
-        return <p>data is loading</p>
+        // return <p>data is loading</p>
     }
     if (error) {
         return <p>something went wrong</p>
@@ -31,7 +31,7 @@ export default function Characters() {
     return (
         <div>
             <img className="logo" src={logo}></img>
-            <FilterByName filter={filter} setQuery={setQuery} />
+            <FilterByName  setQuery={setQuery} />
             <CharacterList data={characters} />
         </div>
         
